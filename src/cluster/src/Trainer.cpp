@@ -603,7 +603,7 @@ void Trainer<T>::train(double acc_cutoff)
 	double prev_acc = -10000;
 	vector<matrix::Matrix> matvec;
 	vector<Feature<T> > features;
-	const size_t min_no_features = std::max(1, (int)bit_feats.size()-1);
+	const size_t min_no_features = std::max(1, (int)bit_feats.size()-2);
 	for (size_t num_features = min_no_features; num_features <= bit_feats.size(); num_features++) {
 		for (size_t j = feat->size(); j < num_features && j < bit_feats.size(); j++) {
 			feat->add_feature(bit_feats[j].first, bit_feats[j].second);
